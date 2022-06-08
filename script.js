@@ -1,15 +1,12 @@
-let title = 'My project';
-let screens = 'Простые, Сложные, Интерактивные';
-let screenPrice = 1000;
-let rollback = 15;
-let fullPrice = 100000;
-let adaptive = true;
+let num = 266219;
+let multiNumbers = num.toString().split("");
+let multiplication = multiNumbers.reduce(function(sum, current) {
+    return sum * +current;
+}, 1)
+let exponentiation = multiplication ** 3;
+let twoNum = +exponentiation.toString().substr(0, 2);
 
-console.log(typeof title);
-console.log(typeof fullPrice);
-console.log(typeof adaptive);
-console.log(screens.length);
-console.log('Стоимость верстки экранов ' + screenPrice + ' рублей');
-console.log('Стоимость разработки сайта ' + fullPrice + ' рублей');
-console.log(screens.toLowerCase().split(', '));
-console.log('Процент отката посреднику за работу ' + (fullPrice * (rollback/100)));
+console.log(multiNumbers);
+console.log(multiplication);
+console.log(exponentiation);
+console.log(twoNum);
