@@ -23,18 +23,21 @@ const appData = {
         return !isNaN(parseFloat(num)) && isFinite(num)
     },
     asking: function () {
-        appData.title = prompt('Как называется наш проект?');
-
-        if (appData.title === null) {
+        // appData.title = prompt('Как называется наш проект?');
+        do {
             appData.title = prompt('Как называется наш проект?');
-        }
+        } while (typeof (appData.title) != 'string' || appData.isNumber(appData.title));
 
         console.log(appData.title);
         console.log(typeof appData.title);
 
         for (let i = 0; i < 2; i++) {
-            let name = prompt('Какие типы экранов нужно разработать?', 'Простые, Сложные, Интерактивные');
+            let name;
             let price = 0;
+
+            do {
+                name = prompt('Какие типы экранов нужно разработать?');
+            } while (typeof (name) != 'string' || appData.isNumber(name))
 
             do {
                 price = prompt('Сколько будет стоить данная работа?')
@@ -44,8 +47,12 @@ const appData = {
         }
 
         for (let i = 0; i < 2; i++) {
-            let name = prompt('Какой дополнительный тип услуги нужен?', 'Верстка хедера');
+            let name;
             let price = 0;
+
+            do {
+                name = prompt('Какой дополнительный тип услуги нужен?');
+            } while (typeof (name) != 'string' || appData.isNumber(name))
 
             do {
                 price = prompt('Сколько это будет стоить?')
